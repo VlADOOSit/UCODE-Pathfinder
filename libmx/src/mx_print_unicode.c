@@ -1,0 +1,28 @@
+#include "libmx.h"
+
+void mx_print_unicode(wchar_t c) {
+	char buf[4];
+ 
+	if (c<0x80) {
+		buf[0] = (c >> 0 & 0x7F) | 0x00;
+		write(1, &buf, 1);
+	}
+	else if (c<0x0800) {
+		buf[0] = (c >> 6 & 0x1F) | 0xC0;
+		buf[1] = (c >> 0 & 0x3F) | 0x80;
+		write(1, &buf, 2);
+	}
+	else if (c<0x010000) {
+		buf[0] = (c >> 12 & 0x0F) | 0xE0;
+		buf[1] = (c >> 6 & 0x3F) | 0x80;
+		buf[2] = (c >> 0 & 0x3F) | 0x80;
+		write(1, &buf, 3);
+	}
+	else {
+		buf[0] = (c >> 18 & 0x07) | 0xF0;
+		buf[1] = (c >> 12 & 0x3F) | 0x80;
+		buf[2] = (c >> 6 & 0x3F) | 0x80;
+		buf[3] = (c >> 0 & 0x3F) | 0x80;
+		write(1, &buf, 4);
+	}
+}
