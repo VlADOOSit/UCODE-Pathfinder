@@ -1,3 +1,36 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@VlADOOSit
+VlADOOSit /
+UCODE-Refresh-C
+Public
+
+1
+0
+
+    0
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+
+    Settings
+
+UCODE-Refresh-C/.gitignore
+vlad OK
+Latest commit ae8bb0f 25 days ago
+History
+0 contributors
+54 lines (46 sloc) 452 Bytes
 # Prerequisites
 *.d
 
@@ -21,6 +54,8 @@
 *.a
 *.la
 *.lo
+.DS_Store
+._.DS_Store
 
 # Shared objects (inc. Windows DLLs)
 *.dll
